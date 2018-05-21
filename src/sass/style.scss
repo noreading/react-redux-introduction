@@ -1,0 +1,49 @@
+@import "../../node_modules/bootstrap/scss/bootstrap";
+
+body {
+  margin: 1rem;
+}
+
+.header {
+  margin-bottom: 1rem;
+}
+
+.table-borderless > tbody > tr > td,
+.table-borderless > tbody > tr > th,
+.table-borderless > tfoot > tr > td,
+.table-borderless > tfoot > tr > th,
+.table-borderless > thead > tr > td,
+.table-borderless > thead > tr > th {
+  border: none;
+}
+
+.todo-item {
+  td {
+    padding: 0.25rem 0;
+  }
+
+  td.col-action {
+    text-align: right;
+    padding-right: 0.25rem;
+
+    .icon-remove {
+      cursor: pointer;
+
+      &:hover {
+        color: #bd2d2d;
+      }
+    }
+  }
+
+  input[type="text"] {
+    border: 1px solid transparent;
+    padding: 0 0.25rem;
+    width: 98%;
+
+    &:hover,
+    &:active,
+    &:focus {
+      border: 1px solid #c0c0c0;
+    }
+  }
+}
