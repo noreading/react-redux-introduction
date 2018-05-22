@@ -3,16 +3,15 @@ Introduction to React &amp; Redux Basics
 
 # 1. Real World Showcase
 
-Let's see how React is used in existing applications and how the component based approach fits to the real world. We will have a look at nested components and how they share a state to store application data.
+Let's see how React is used in the final to-do application and how the component based approach fits to the real world. We will have a look at nested components and how they share a state to store application data.
 
-We will use the demo application of Wes Bos as a showcase.
-Please open [Catch of The Day](http://catchoftheday.wesbos.com/store/elegant-unsightly-criteria) in your browser.
+Please open the demo of our [What to do?](https://todo-redux.node-friends.com/) app in your browser.
 
-Use the React Developer Tools for Google Chrome to check the state of the App component and fiddle around with the data.
+Use the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) for Google Chrome to check the state of the __App__ component and fiddle around with the data to see how changes take effect.
 
-The following image shows how the components are splitted in the shop.
+The following image shows how the components are splitted in the app.
 
-![Screenshot: React components](./docs/images/catch-of-the-day-components.png)
+![Screenshot: React components](./docs/images/component-schema.jpg)
 
 
 # 2. Setting up our own App with `React Scripts`
