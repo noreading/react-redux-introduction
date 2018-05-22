@@ -152,11 +152,7 @@ import { render } from "react-dom";
 
 class Header extends React.Component {
   render() {
-    return (
-      <header className="header">
-        <h1>What to do?</h1>
-      </header>
-    );
+    return <h1>What to do?</h1>;
   }
 };
 
@@ -186,11 +182,7 @@ import React from "react";
 
 class Header extends React.Component {
   render() {
-    return (
-      <header className="header">
-        <h1>What to do?</h1>
-      </header>
-    );
+    return <h1>What to do?</h1>;
   }
 };
 
@@ -390,9 +382,7 @@ package.json
 
 ```JSON
 {
-  "name": "react-todo",
-  "version": "1.0.0",
-  "private": true,
+  ...
   "scripts": {
     "build-css": "node-sass-chokidar src/sass/ -o src/css/",
     "watch-css":
@@ -403,17 +393,7 @@ package.json
     "build": "npm-run-all build-css build-js",
     "eject": "react-scripts eject"
   },
-  "dependencies": {
-    "bootstrap": "^4.0.0",
-    "font-awesome": "^4.7.0",
-    "node-sass-chokidar": "^1.2.2",
-    "npm-run-all": "^4.1.2",
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.4",
-    "uuid": "^3.2.1"
-  }
+  ...
 }
 ```
 
