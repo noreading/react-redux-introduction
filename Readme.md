@@ -1909,50 +1909,38 @@ import React from "react";
 import ToDoItem from "./ToDoItem";
 
 class ToDoList extends React.Component {
-  constructor(props) {
-    super(props);
-    this.state = {
-      items: {}
-    };
-  }
+  filteredItems = () => {
+    const filtered = [];
 
-  static getDerivedStateFromProps(props, state) {
-    let itemsFiltered = {};
-
-    for (const uuid in props.items) {
-      const item = props.items[uuid];
+    for (const uuid in this.props.items) {
+      const item = this.props.items[uuid];
 
       if (
-        props.filter === "all" ||
-        (props.filter === "done" && item.done === true) ||
-        (props.filter === "undone" && item.done === false)
+        this.props.filter === "all" ||
+        (this.props.filter === "done" && item.done === true) ||
+        (this.props.filter === "undone" && item.done === false)
       ) {
-        itemsFiltered[uuid] = item;
+        filtered.push(item);
       }
     }
 
-    state.items = itemsFiltered;
-    return state;
-  }
+    return filtered;
+  };
 
   render() {
     return (
       <div className="todo-list">
         <table className="todo-items table table-borderless">
           <tbody>
-            {Object.keys(this.state.items).map(uuid => {
-              const item = this.state.items[uuid];
-
-              return (
-                <ToDoItem
-                  key={`todo-item-${uuid}`}
-                  data={item}
-                  updateToDoText={this.props.updateToDoText}
-                  toggleToDoDone={this.props.toggleToDoDone}
-                  removeToDo={this.props.removeToDo}
-                />
-              );
-            })}
+            {this.filteredItems().map(item => (
+              <ToDoItem
+                key={`todo-item-${item.uuid}`}
+                data={item}
+                updateToDoText={this.props.updateToDoText}
+                toggleToDoDone={this.props.toggleToDoDone}
+                removeToDo={this.props.removeToDo}
+              />
+            ))}
           </tbody>
         </table>
       </div>
