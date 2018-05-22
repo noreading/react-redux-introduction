@@ -1898,7 +1898,7 @@ export default App;
 
 Great. We now have our filter stored in the state of the `App` and we pass it to our `ToDoList` component as prop "filter".
 
-The next step is to convert our `ToDoList` component to a stateful one and to filter all todo items, that are passed as props, depending on the active filter. We use the static `getDerivedStateFromProps()` lifecycle method from React, that is triggered when the component is created and also every time the props change. As the `App` component passes the "filter" prop from the state, every click on a filter button will update the props of the `ToDoList` component.
+The next step is to convert our `ToDoList` component to a stateful one and to filter all todo items, that are passed as props, depending on the active filter. We use a new method `filteredItems()` in our class during rendering. As the `App` component passes the "filter" prop from the state, every click on a filter button will update the props of the `ToDoList` component and trigger a new rendering, so also a filtering.
 
 ```
 src/components/ToDoList.jsx
