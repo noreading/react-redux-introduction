@@ -1754,10 +1754,6 @@ src/components/ToDoFilter.jsx
 import React from "react";
 
 class ToDoFilter extends React.Component {
-  setFilter = filter => {
-    this.props.setFilter(filter);
-  };
-
   filters = ["all", "undone", "done"];
 
   render() {
@@ -1775,7 +1771,7 @@ class ToDoFilter extends React.Component {
                 this.props.activeFilter === filter ? "active" : ""
               }`}
               onClick={e => {
-                this.setFilter(filter);
+                this.props.setFilter(filter);
               }}
               key={filter}
             >
