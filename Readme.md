@@ -2507,9 +2507,7 @@ export default connect(state => ({
 
 What we did:
 1. Import the _connect_ function.
-1. Remove the constructor and the lifecycle method _getDerivedStateFromProps()_.
-1. Add a new method _filteredItems()_ that reduces the items, based on the current filter value.
-1. Change the loop to use the _filteredItems()_ method and remove props for functions to mutate state.
+1. Remove props for functions to mutate state.
 1. Wrap our component with the _connect()_ function to pass the todo items and filter from the store.
 
 How to test the expected behavior:
