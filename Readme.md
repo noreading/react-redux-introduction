@@ -2224,6 +2224,14 @@ function toDoItems(state = {}, action) {
           done: false
         }
       };
+    case actions.UPDATE_TODO_TEXT:
+      return {
+        ...state,
+        [action.uuid]: {
+          ...state[action.uuid],
+          text: action.text
+        }
+      };
     case actions.TOGGLE_TODO:
       return {
         ...state,
@@ -2232,6 +2240,11 @@ function toDoItems(state = {}, action) {
           done: !state[action.uuid].done
         }
       };
+    case actions.REMOVE_TODO:
+      let nextState = { ...state };
+      delete nextState[action.uuid];
+
+      return nextState;
     default:
       return state;
   }
