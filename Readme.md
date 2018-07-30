@@ -1315,7 +1315,7 @@ Before we start to modify all of our components, we will load some more styles, 
 As a first step we install [Font Awesome](https://fontawesome.com/v4.7.0/) using yarn.
 
 ```bash
-yarn add font-aweseome
+yarn add font-awesome
 ```
 
 To load Font Awesome, we need to add it to the `index.js` file.
