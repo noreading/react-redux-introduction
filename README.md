@@ -291,14 +291,16 @@ Update the code to the following and it will work.
 ```jsx
 import React from "react";
 
-const Header = props => {
-  return (
-    <React.Fragment>
-      <h1>What to do?</h1>
-      <span className="tagline">This could be your bucket list.</span>
-    </React.Fragment>
-  );
-};
+class Header extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <h1>What to do?</h1>
+        <span className="tagline">This could be your bucket list.</span>
+      </React.Fragment>
+    );
+  }
+}
 
 export default Header;
 ```
@@ -320,14 +322,16 @@ Now we can use `Fragment` as element name.
 ```jsx
 import React, { Fragment } from "react";
 
-const Header = props => {
-  return (
-    <Fragment>
-      <h1>What to do?</h1>
-      <span className="tagline">This could be your bucket list.</span>
-    </Fragment>
-  );
-};
+class Header extends React.Component {
+  render() {
+    return (
+      <Fragment>
+        <h1>What to do?</h1>
+        <span className="tagline">This could be your bucket list.</span>
+      </Fragment>
+    );
+  }
+}
 
 export default Header;
 ```
@@ -629,7 +633,7 @@ As our header does not need any "special" behaviour or methods, we can use the _
 
 Let's rewrite our `Header` component and check how that works. The result is an exported function that returns the JSX of our component.
 
-Be aware that you need to use `params` instead of `this.params` as props are passed as a parameter of the function now.
+Be aware that you need to use `props` instead of `this.props` as props are passed as a parameter of the function now.
 
 ```
 src/components/Header.jsx
