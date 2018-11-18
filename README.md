@@ -1550,6 +1550,8 @@ export default ToDoList;
 
 Now let's use the mutations to lift up the state changes that each item can trigger. We can change the text of an item, mark it as done or remove it from the list. Keep care to change the list item to a table row, to match the table of the `ToDoList` component.
 
+We will also add a method to handle every `keyup` event of the text input field, to check if the `keyCode` matches the \[Enter\] key. If the \[Enter\] key is pressed, the `blur()` method of the input elemenent is called, to remove the focus.
+
 ```
 src/components/ToDoItem.jsx
 ```
@@ -1558,6 +1560,13 @@ src/components/ToDoItem.jsx
 import React from "react";
 
 class ToDoItem extends React.Component {
+  handleInputKeyUp(e) {
+    // Remove focus, when the [Enter] key is pressed
+    if (e.keyCode === 13) {
+      e.target.blur();
+    }
+  }
+
   render() {
     const todo = this.props.data;
 
@@ -1588,6 +1597,9 @@ class ToDoItem extends React.Component {
             defaultValue={todo.text}
             onChange={e => {
               this.props.updateToDoText(todo.uuid, e.target.value);
+            }}
+            onKeyUp={e => {
+              this.handleInputKeyUp(e);
             }}
           />
         </td>
@@ -2560,6 +2572,13 @@ import { connect } from "react-redux";
 import { updateToDoText, toggleToDo, removeToDo } from "../actions/index";
 
 class ToDoItem extends React.Component {
+  handleInputKeyUp(e) {
+    // Remove focus, when the [Enter] key is pressed
+    if (e.keyCode === 13) {
+      e.target.blur();
+    }
+  }
+
   render() {
     const todo = this.props.data;
 
@@ -2592,6 +2611,9 @@ class ToDoItem extends React.Component {
             defaultValue={todo.text}
             onChange={e => {
               this.props.updateToDoText(todo.uuid, e.target.value);
+            }}
+            onKeyUp={e => {
+              this.handleInputKeyUp(e);
             }}
           />
         </td>
