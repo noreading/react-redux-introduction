@@ -43,27 +43,34 @@ package.json
 {
   "name": "react-todo",
   "version": "1.0.0",
-  "private": true,
+  "description": "A todo application using the basics of React and Redux",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
     "eject": "react-scripts eject"
   },
-  "dependencies": {
-    "react": "^16.3.1",
-    "react-dom": "^16.3.1",
-    "react-router-dom": "^4.2.2",
-    "react-scripts": "^1.1.4"
-  }
+  "devDependencies": {
+    "react": "^16.6.3",
+    "react-dom": "^16.6.3",
+    "react-redux": "^5.1.1",
+    "react-router-dom": "^4.3.1",
+    "react-scripts": "^2.1.1"
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
 ```
 
 ## 2.3 Installing packages
 
-We will use [yarn](https://yarnpkg.com/en/) to install all needed [npm](https://www.npmjs.com/) packages, as it is a more secure way to manage our dependencies.
+We use [npm](https://www.npmjs.com/) to install all needed packages for our project.
 
 ```bash
-yarn install
+npm install
 ```
 
 ## 2.4. Creating an index.html file
@@ -75,21 +82,21 @@ public/index.html
 ```
 
 ```html
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
 
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>What to do?</title>
-</head>
+    <title>What to do?</title>
+  </head>
 
-<body>
-  <div id="main">
-    <!-- This is where the React app is loaded -->
-  </div>
-</body>
-
+  <body>
+    <div id="main"><!-- This is where the React app is loaded --></div>
+  </body>
 </html>
 ```
 
@@ -126,7 +133,7 @@ Let's see what we got there.
 Now, that we've got something we want to render, let's start our React application with the following command.
 
 ```bash
-yarn start
+npm start
 ```
 
 The result should look like this:
@@ -284,14 +291,16 @@ Update the code to the following and it will work.
 ```jsx
 import React from "react";
 
-const Header = props => {
-  return (
-    <React.Fragment>
-      <h1>What to do?</h1>
-      <span className="tagline">This could be your bucket list.</span>
-    </React.Fragment>
-  );
-};
+class Header extends React.Component {
+  render() {
+    return (
+      <React.Fragment>
+        <h1>What to do?</h1>
+        <span className="tagline">This could be your bucket list.</span>
+      </React.Fragment>
+    );
+  }
+}
 
 export default Header;
 ```
@@ -313,14 +322,16 @@ Now we can use `Fragment` as element name.
 ```jsx
 import React, { Fragment } from "react";
 
-const Header = props => {
-  return (
-    <Fragment>
-      <h1>What to do?</h1>
-      <span className="tagline">This could be your bucket list.</span>
-    </Fragment>
-  );
-};
+class Header extends React.Component {
+  render() {
+    return (
+      <Fragment>
+        <h1>What to do?</h1>
+        <span className="tagline">This could be your bucket list.</span>
+      </Fragment>
+    );
+  }
+}
 
 export default Header;
 ```
@@ -366,7 +377,7 @@ As we're going to use the Bootstrap framework in our demo application, it's a go
 We need some additional packages, that we install by running the following command. Bootstrap is used to create the basic laout of our application in the next steps.
 
 ```bash
-yarn add node-sass-chokidar npm-run-all bootstrap
+npm install --save-dev node-sass-chokidar npm-run-all bootstrap
 ```
 
 ## 5.2 Update the package.json
@@ -439,7 +450,7 @@ render(<Header />, document.querySelector("#main"));
 Now we can start the application again.
 
 ```bash
-yarn start
+npm start
 ```
 
 The result should now look like this:
@@ -622,7 +633,7 @@ As our header does not need any "special" behaviour or methods, we can use the _
 
 Let's rewrite our `Header` component and check how that works. The result is an exported function that returns the JSX of our component.
 
-Be aware that you need to use `params` instead of `this.params` as props are passed as a parameter of the function now.
+Be aware that you need to use `props` instead of `this.props` as props are passed as a parameter of the function now.
 
 ```
 src/components/Header.jsx
@@ -900,7 +911,7 @@ class ToDoForm extends React.Component {
         />
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="submit">
-            <i className="fa fa-plus" aria-hidden="true" />&nbsp;Add item
+            <i className="fas fa-plus" aria-hidden="true" />&nbsp;Add item
           </button>
         </div>
       </form>
@@ -971,7 +982,7 @@ class ToDoForm extends React.Component {
         />
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="submit">
-            <i className="fa fa-plus" aria-hidden="true" />&nbsp;Add item
+            <i className="fas fa-plus" aria-hidden="true" />&nbsp;Add item
           </button>
         </div>
       </form>
@@ -1032,7 +1043,7 @@ class ToDoForm extends React.Component {
         />
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="submit">
-            <i className="fa fa-plus" aria-hidden="true" />&nbsp;Add item
+            <i className="fas fa-plus" aria-hidden="true" />&nbsp;Add item
           </button>
         </div>
       </form>
@@ -1058,7 +1069,7 @@ When you open the Chrome dev console, insert a text in the input field and press
 Great! But let's improve our code style a bit and use an alternative to the oldschool binding that we have right now. As we're using the `react scripts` module, which has babel inside, we are able to use an easier ES6 syntax without modifying the constructor.
 
 ```
-src/components/TtoDoForm.jsx
+src/components/ToDoForm.jsx
 ```
 
 ```jsx
@@ -1138,7 +1149,7 @@ Let's add a mutation to add a new item to the todo list and pass this mutation t
 As we will use unique identifiers (UUID) for our todo items, let's add a new npm package first, that does the magic for us.
 
 ```bash
-yarn add uuid
+npm install --save-dev uuid
 ```
 
 Now we can use that in our component.
@@ -1312,10 +1323,10 @@ Cool! Now we can add and display items and in the next step we deal with editing
 
 Before we start to modify all of our components, we will load some more styles, to enhance our application layout. We want to display the items in a nice list with features to modify and delete them.
 
-As a first step we install [Font Awesome](https://fontawesome.com/v4.7.0/) using yarn.
+As a first step we install [Font Awesome](https://fontawesome.com/) using npm.
 
 ```bash
-yarn add font-awesome
+npm install --save-dev @fortawesome/fontawesome-free
 ```
 
 To load Font Awesome, we need to add it to the `index.js` file.
@@ -1329,7 +1340,7 @@ import React from "react";
 import { render } from "react-dom";
 import Router from "./components/Router";
 
-import "font-awesome/css/font-awesome.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 import "./css/style.css";
 
 render(<Router />, document.querySelector("#main"));
@@ -1361,9 +1372,29 @@ body {
   border: none;
 }
 
+.todo-items {
+  margin-top: 1rem;
+}
+
 .todo-item {
+  &:hover {
+    background-color: #efefef;
+  }
+
   td {
     padding: 0.25rem 0;
+
+    &:first-child {
+      padding-left: 0.5rem;
+      border-top-left-radius: 0.25rem;
+      border-bottom-left-radius: 0.25rem;
+    }
+
+    &:last-child {
+      padding-right: 0.5rem;
+      border-top-right-radius: 0.25rem;
+      border-bottom-right-radius: 0.25rem;
+    }
   }
 
   td.col-action {
@@ -1371,7 +1402,9 @@ body {
     padding-right: 0.25rem;
 
     .icon-remove {
+      color: #c0c0c0;
       cursor: pointer;
+      padding: 0 0.25rem;
 
       &:hover {
         color: #bd2d2d;
@@ -1383,12 +1416,7 @@ body {
     border: 1px solid transparent;
     padding: 0 0.25rem;
     width: 98%;
-
-    &:hover,
-    &:active,
-    &:focus {
-      border: 1px solid #c0c0c0;
-    }
+    height: auto;
   }
 }
 ```
@@ -1565,7 +1593,7 @@ class ToDoItem extends React.Component {
         </td>
         <td className="col-action">
           <i
-            className="icon-remove fa fa-remove"
+            className="icon-remove far fa-trash-alt"
             onClick={e => this.props.removeToDo(todo.uuid)}
           />
         </td>
@@ -2087,7 +2115,7 @@ To get some insights of the data we store in our application, when Redux is used
 We need to load additional packages, to get redux support in our application.
 
 ```bash
-yarn add redux react-redux
+npm install --save-dev redux react-redux
 ```
 
 ## 18.2 Create actions
@@ -2109,6 +2137,8 @@ Now let's create the actions.
 src/actions/index.js
 ```
 
+The first thing we'll do in our new file is to define some constants for the different action types that we want to support. This is important, to have only one place in our code where those strings are defined, as we can reference them by their constants.
+
 ```jsx
 /*
  * Action types
@@ -2124,10 +2154,9 @@ export const ADD_TODO = "ADD_TODO";
 export const UPDATE_TODO_TEXT = "UPDATE_TODO_TEXT";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
-
 ```
 
-The first thing we'll do in our new file is to define some constants for the different action types that we want to support. This is important, to have only one place in our code where those strings are defined, as we can reference them by their constants.
+The next step is to add other constants that might be helpful to save in one place. In our example we will store all supported filter settings as an object to reference them from here.
 
 ```jsx
 /*
@@ -2138,10 +2167,9 @@ export const filters = {
   DONE: "done",
   UNDONE: "undone"
 };
-
 ```
 
-The next step is to add other constants that might helpful to save in one place. In our example we will store all supported filter settings as an object to reference them from here.
+And finally we defined our action creators that return our actions.
 
 ```jsx
 /*
@@ -2172,8 +2200,6 @@ export const toggleToDo = uuid => {
   return { type: TOGGLE_TODO, uuid };
 };
 ```
-
-And finally we defined our action creators that return our actions.
 
 ## 18.3 Create reducers
 
@@ -2251,7 +2277,7 @@ function toDoItems(state = {}, action) {
 }
 ```
 
-As a last step we will combine the reducers into a single main reducer, that we will pass to our store later. This is the best way to split the handling of different state properties with their own reducers that could also be splitted into seperate files.
+As a last step we will combine the reducers into a single one, that we will pass to our store later. This is the best way to split the handling of different state properties with their own reducers that could also be splitted into seperate files.
 
 ```jsx
 const appReducer = combineReducers({
@@ -2295,7 +2321,7 @@ import appReducer from "./reducers/index";
 import Router from "./components/Router";
 
 // Styles
-import "font-awesome/css/font-awesome.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 import "./css/style.css";
 
 // Create Redux store and initialize the app
@@ -2425,7 +2451,7 @@ class ToDoForm extends React.Component {
         />
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="submit">
-            <i className="fa fa-plus" aria-hidden="true" />&nbsp;Add item
+            <i className="fas fa-plus" aria-hidden="true" />&nbsp;Add item
           </button>
         </div>
       </form>
@@ -2569,7 +2595,7 @@ class ToDoItem extends React.Component {
         </td>
         <td className="col-action">
           <i
-            className="icon-remove fa fa-remove"
+            className="icon-remove far fa-trash-alt"
             onClick={e => this.props.removeToDo(todo.uuid)}
           />
         </td>
@@ -2706,7 +2732,7 @@ import { loadState, saveState } from "./modules/localStorage";
 import Router from "./components/Router";
 
 // Styles
-import "font-awesome/css/font-awesome.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 import "./css/style.css";
 
 // Create Redux store and initialize the app
@@ -2727,3 +2753,11 @@ render(
   document.querySelector("#main")
 );
 ```
+
+## 18.11 The End
+
+__Congratulations - You did it!__
+
+You've finished this nice little introduction and your final result should be a fully working React application that uses Redux for the state and synchronises it with the browser's localStorage.
+
+Have fun coding with React!<br />
