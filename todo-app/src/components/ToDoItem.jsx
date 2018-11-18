@@ -3,6 +3,13 @@ import { connect } from "react-redux";
 import { updateToDoText, toggleToDo, removeToDo } from "../actions/index";
 
 class ToDoItem extends React.Component {
+  handleInputKeyUp(e) {
+    // Remove focus, when the [Enter] key is pressed
+    if (e.keyCode === 13) {
+      e.target.blur();
+    }
+  }
+
   render() {
     const todo = this.props.data;
 
@@ -35,6 +42,9 @@ class ToDoItem extends React.Component {
             defaultValue={todo.text}
             onChange={e => {
               this.props.updateToDoText(todo.uuid, e.target.value);
+            }}
+            onKeyUp={e => {
+              this.handleInputKeyUp(e);
             }}
           />
         </td>
