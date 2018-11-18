@@ -12,7 +12,7 @@ import { loadState, saveState } from "./modules/localStorage";
 import Router from "./components/Router";
 
 // Styles
-import "font-awesome/css/font-awesome.css";
+import "@fortawesome/fontawesome-free/css/all.css";
 import "./css/style.css";
 
 // Create Redux store and initialize the app

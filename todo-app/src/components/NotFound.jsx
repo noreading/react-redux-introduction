@@ -12,7 +12,8 @@ class NotFound extends React.Component {
         <Header tagline="404 -  Page not found!" />
         <div className="alert alert-warning">
           <strong>
-            Ooops .... sorry!<br />
+            Ooops .... sorry!
+            <br />
           </strong>
           The requested page could not be found.
         </div>

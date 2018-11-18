@@ -3,10 +3,6 @@ import { connect } from "react-redux";
 import { filters, setFilter } from "../actions/index";
 
 class ToDoFilter extends React.Component {
-  setFilter = filter => {
-    this.props.setFilter(filter);
-  };
-
   render() {
     return (
       <div className="todo-filters text-right">
@@ -25,7 +21,7 @@ class ToDoFilter extends React.Component {
                   this.props.filter === filter ? "active" : ""
                 }`}
                 onClick={e => {
-                  this.setFilter(filter);
+                  this.props.setFilter(filter);
                 }}
                 key={filterKey}
               >

@@ -12,7 +12,7 @@ class ToDoItem extends React.Component {
           <div className="custom-control custom-checkbox">
             <input
               className="custom-control-input"
-              value={todo.uuid}
+              defaultValue={todo.uuid}
               id={`todo-done-${todo.uuid}`}
               type="checkbox"
               checked={todo.done}
@@ -32,7 +32,7 @@ class ToDoItem extends React.Component {
           <input
             type="text"
             className="form-control"
-            value={todo.text}
+            defaultValue={todo.text}
             onChange={e => {
               this.props.updateToDoText(todo.uuid, e.target.value);
             }}
@@ -40,7 +40,7 @@ class ToDoItem extends React.Component {
         </td>
         <td className="col-action">
           <i
-            className="icon-remove fa fa-remove"
+            className="icon-remove far fa-trash-alt"
             onClick={e => this.props.removeToDo(todo.uuid)}
           />
         </td>
@@ -49,8 +49,11 @@ class ToDoItem extends React.Component {
   }
 }
 
-export default connect(state => ({}), {
-  updateToDoText,
-  toggleToDo,
-  removeToDo
-})(ToDoItem);
+export default connect(
+  state => ({}),
+  {
+    updateToDoText,
+    toggleToDo,
+    removeToDo
+  }
+)(ToDoItem);

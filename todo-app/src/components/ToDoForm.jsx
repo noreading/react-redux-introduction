@@ -24,7 +24,8 @@ class ToDoForm extends React.Component {
         />
         <div className="input-group-append">
           <button className="btn btn-outline-secondary" type="submit">
-            <i className="fa fa-plus" aria-hidden="true" />&nbsp;Add item
+            <i className="fas fa-plus" aria-hidden="true" />
+            &nbsp;Add item
           </button>
         </div>
       </form>
@@ -32,6 +33,9 @@ class ToDoForm extends React.Component {
   }
 }
 
-export default connect(state => ({}), {
-  addToDo
-})(ToDoForm);
+export default connect(
+  state => ({}),
+  {
+    addToDo
+  }
+)(ToDoForm);

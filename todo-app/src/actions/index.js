@@ -1,15 +1,20 @@
 /*
- * action types
+ * Action types
  */
 
+// Filter
+
 export const SET_FILTER = "SET_FILTER";
+
+// Todo Items
+
 export const ADD_TODO = "ADD_TODO";
 export const UPDATE_TODO_TEXT = "UPDATE_TODO_TEXT";
 export const TOGGLE_TODO = "TOGGLE_TODO";
 export const REMOVE_TODO = "REMOVE_TODO";
 
 /*
- * other constants
+ * Other constants
  */
 export const filters = {
   ALL: "all",
@@ -18,12 +23,16 @@ export const filters = {
 };
 
 /*
- * action creators
+ * Action creators
  */
+
+// Filter
 
 export const setFilter = filter => {
   return { type: SET_FILTER, filter };
 };
+
+// Todo items
 
 export const addToDo = text => {
   return { type: ADD_TODO, text };
