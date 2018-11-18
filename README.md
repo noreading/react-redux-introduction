@@ -11,7 +11,7 @@ Use the [React Developer Tools](https://chrome.google.com/webstore/detail/react-
 
 The following image shows how the components are splitted in the app.
 
-![Screenshot: React components](./docs/images/component-schema.jpg)
+![Screenshot: React components](./docs/images/component-schema.png)
 
 
 # 2. Setting up our own App with `React Scripts`
@@ -138,7 +138,7 @@ npm start
 
 The result should look like this:
 
-![Screenshot: Hello World](./docs/images/hello-world.jpg)
+![Screenshot: Hello World](./docs/images/hello-world.png)
 
 Okay, so we're able to render something into our DOM. The result should be a nice paragraph with the text "Hello World!".
 
@@ -171,7 +171,7 @@ With these changes we updated the code to
 
 We should see the `h1` in the browser now.
 
-![Screenshot: First Component](./docs/images/first-component.jpg)
+![Screenshot: First Component](./docs/images/first-component.png)
 
 ## 3.2. Using the component directory
 
@@ -338,7 +338,7 @@ export default Header;
 
 Our application should now look like this:
 
-![Screenshot: Added tagline](./docs/images/added-tagline.jpg)
+![Screenshot: Added tagline](./docs/images/added-tagline.png)
 
 ## 4.3 Embedded Expressions
 
@@ -455,7 +455,7 @@ npm start
 
 The result should now look like this:
 
-![Screenshot: Bootstrap is there](./docs/images/added-bootstrap.jpg)
+![Screenshot: Bootstrap is there](./docs/images/added-bootstrap.png)
 
 
 # 6. Create a typical app layout with components
@@ -555,7 +555,7 @@ export default Header;
 
 The result of our new app layout and the changes that we made should result in this:
 
-![Screenshot: Added the app layout](./docs/images/added-app-layout.jpg)
+![Screenshot: Added the app layout](./docs/images/added-app-layout.png)
 
 
 # 7. Passing data with Props
@@ -624,7 +624,7 @@ export default Header;
 
 The tagline of our application should now be changed from "This could be your bucket list." to "This could be your shopping list.". We can use the same component with different taglines now, so props are a good way to create dynamic components.
 
-![Screenshot: Added a prop](./docs/images/added-a-prop.jpg)
+![Screenshot: Added a prop](./docs/images/added-a-prop.png)
 
 
 ## 8. Stateless functional components
@@ -793,11 +793,11 @@ With our new routing setup, we should be able see the new pages, in our applicat
 
 __Help Page__
 
-![Screenshot: Help Page](./docs/images/added-help-page.jpg)
+![Screenshot: Help Page](./docs/images/added-help-page.png)
 
 __404 Page__
 
-![Screenshot: 404 Page](./docs/images/added-404-page.jpg)
+![Screenshot: 404 Page](./docs/images/added-404-page.png)
 
 
 # 10. Helper Functions
@@ -952,7 +952,7 @@ export default App;
 
 The result should look like this:
 
-![Screenshot: Added a form](./docs/images/added-a-form.jpg)
+![Screenshot: Added a form](./docs/images/added-a-form.png)
 
 ## 11.2 Add an event handler
 
@@ -1064,7 +1064,7 @@ What did we change?
 
 When you open the Chrome dev console, insert a text in the input field and press the button, you should see the following:
 
-![Screenshot: Added reference and binding](./docs/images/added-a-reference.jpg)
+![Screenshot: Added reference and binding](./docs/images/added-a-reference.png)
 
 Great! But let's improve our code style a bit and use an alternative to the oldschool binding that we have right now. As we're using the `react scripts` module, which has babel inside, we are able to use an easier ES6 syntax without modifying the constructor.
 
@@ -1232,7 +1232,7 @@ You will see an empty `toDoItems` property of the state when the page is initial
 
 If everything works it should look like this, after you added a new item:
 
-![Screenshot: Using the first mutation](./docs/images/added-a-mutation.jpg)
+![Screenshot: Using the first mutation](./docs/images/added-a-mutation.png)
 
 
 # 13. Displaying state with JSX
@@ -1312,7 +1312,7 @@ Great! So we should see all items that we add to our list below the form. Try to
 
 The result should look like this:
 
-![Screenshot: Using the first mutation](./docs/images/using-a-first-mutation.jpg)
+![Screenshot: Using the first mutation](./docs/images/using-a-first-mutation.png)
 
 
 # 14. Updating and deleting items
@@ -1607,7 +1607,7 @@ export default ToDoItem;
 
 The result should look like this:
 
-![Screenshot: New Layout](./docs/images/new-layout.jpg)
+![Screenshot: New Layout](./docs/images/new-layout.png)
 
 
 # 15 Persisting state with localStorage
@@ -1980,11 +1980,13 @@ export default ToDoList;
 
 The result should look like this:
 
-![Screenshot: Added filters](./docs/images/added-filters.jpg)
+![Screenshot: Added filters](./docs/images/added-filters.png)
 
-And when we mark the "Orange" as done and filter by "undone" the result should be this:
+Let's mark the "Oranges" as done and filter the list by "done" afterwards to see if the changes take effect. The item "Oranges" should now be on the list only when it is filtered by "all" or "done".
 
-![Screenshot: Applied filters](./docs/images/applied-filters.jpg)
+![Screenshot: Applied filter "all"](./docs/images/applied-filters-2.png)
+
+![Screenshot: Applied filter "done"](./docs/images/applied-filters.png)
 
 # 17 Introducing Redux
 
@@ -2411,7 +2413,7 @@ How to test the expected behavior:
 
 The changes should be visible like in the following example:
 
-![Screenshot: Redux Dev Tools: Filter change](./docs/images/redux-dev-tools-filter.jpg)
+![Screenshot: Redux Dev Tools: Filter change](./docs/images/redux-dev-tools-filter.png)
 
 ## 18.6 Connect the `ToDoForm` component
 
@@ -2474,9 +2476,9 @@ How to test the expected behavior:
 1. Use the form to add a new todo item you can't see (yet).
 1. Check the state in the Redux Dev Tools, for the ADD_TODO history entry.
 
-The changes should be visible like in the following example:
+The new todo item should be visible, like in the following example:
 
-![Screenshot: Redux Dev Tools: Added todo item](./docs/images/redux-dev-tools-added-todo.jpg)
+![Screenshot: Redux Dev Tools: Added todo item](./docs/images/redux-dev-tools-added-todo.png)
 
 ## 18.7 Connect the `ToDoList` component
 
@@ -2624,12 +2626,12 @@ How to test the expected behavior:
 1. Check the state in the Redux Dev Tools, for the UPDATE_TODO_TEXT history entry.
 1. Mark the item as done, by clicking on the checkbox in front of it.
 1. Check the state in the Redux Dev Tools, for the TOGGLE_TODO history entry.
-1. Remove the item, by clicking on the X on the right side of it.
+1. Remove the item, by clicking on the trash icon on the right side of it.
 1. Check the state in the Redux Dev Tools, for the REMOVE_TODO history entry.
 
 The changes should be visible like in the following example:
 
-![Screenshot: Redux Dev Tools: Multiple actions](./docs/images/redux-dev-tools-multiple-actions.jpg)
+![Screenshot: Redux Dev Tools: Multiple actions](./docs/images/redux-dev-tools-multiple-actions.png)
 
 ## 18.9 Update the `App` component
 
