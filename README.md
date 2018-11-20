@@ -425,7 +425,7 @@ import "./sass/style.scss";
 render(<Header />, document.querySelector("#main"));
 ```
 
-## 5.5 Start the application
+## 5.4 Start the application
 
 Now we can start the application again.
 
