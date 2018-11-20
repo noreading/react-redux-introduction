@@ -503,7 +503,7 @@ import React from "react";
 import { render } from "react-dom";
 import App from "./components/App";
 
-import "./css/style.css";
+import "./sass/style.scss";
 
 render(<App />, document.querySelector("#main"));
 ```
@@ -764,7 +764,7 @@ import React from "react";
 import { render } from "react-dom";
 import Router from "./components/Router";
 
-import "./css/style.css";
+import "./sass/style.scss";
 
 render(<Router />, document.querySelector("#main"));
 ```
@@ -1321,7 +1321,7 @@ import { render } from "react-dom";
 import Router from "./components/Router";
 
 import "@fortawesome/fontawesome-free/css/all.css";
-import "./css/style.css";
+import "./sass/style.scss";
 
 render(<Router />, document.querySelector("#main"));
 ```
@@ -2316,7 +2316,7 @@ import Router from "./components/Router";
 
 // Styles
 import "@fortawesome/fontawesome-free/css/all.css";
-import "./css/style.css";
+import "./sass/style.scss";
 
 // Create Redux store and initialize the app
 const store = createStore(
@@ -2737,7 +2737,7 @@ import Router from "./components/Router";
 
 // Styles
 import "@fortawesome/fontawesome-free/css/all.css";
-import "./css/style.css";
+import "./sass/style.scss";
 
 // Create Redux store and initialize the app
 const store = createStore(
