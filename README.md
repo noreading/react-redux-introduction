@@ -379,42 +379,15 @@ export default Header;
 
 As we're going to use the Bootstrap framework in our demo application, it's a good idea to extend our setup with a SASS/SCSS loader. We will use the package `node-sass-chokidar` instead of `node-sass`, as it fixes some known bugs.
 
-## 5.1 Install additional packages
+## 5.1 Install additional package
 
 We need some additional packages, that we install by running the following command. Bootstrap is used to create the basic laout of our application in the next steps.
 
 ```bash
-npm install --save-dev node-sass-chokidar npm-run-all bootstrap
+npm install --save-dev node-sass-chokidar bootstrap
 ```
 
-## 5.2 Update the package.json
-
-As we want to run the compilation of our SASS/SCSS files every time the application is started or the build is compiled, we need to update the `scripts` section of our `package.json` file.
-
-Stop your react application, if it is running ([CTRL] + [C]) and update the file.
-
-```
-package.json
-```
-
-```JSON
-{
-  ...
-  "scripts": {
-    "build-css": "node-sass-chokidar src/sass/ -o src/css/",
-    "watch-css":
-      "npm run build-css && node-sass-chokidar src/sass/ -o src/css/ --watch --recursive",
-    "start-js": "react-scripts start",
-    "start": "npm-run-all -p watch-css start-js",
-    "build-js": "react-scripts build",
-    "build": "npm-run-all build-css build-js",
-    "eject": "react-scripts eject"
-  },
-  ...
-}
-```
-
-## 5.3 Create the stylesheet file
+## 5.2 Create the stylesheet file
 
 With the SASS/SCSS loader in place, we can now add our SCSS file as `src/sass/style.scss` with some basic styling in it.
 
@@ -434,7 +407,7 @@ body {
 }
 ```
 
-## 5.4 Import the stylesheet file
+## 5.3 Import the stylesheet file
 
 One final step is needed, before we can restart our application. We need to import the stylesheet into our `src/index.js` so that it's loaded by webpack.
 
@@ -447,7 +420,7 @@ import React from "react";
 import { render } from "react-dom";
 import Header from "./components/Header";
 
-import "./css/style.css";
+import "./sass/style.scss";
 
 render(<Header />, document.querySelector("#main"));
 ```
