@@ -54,7 +54,8 @@ package.json
     "react-dom": "^16.6.3",
     "react-redux": "^5.1.1",
     "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.1"
+    "react-scripts": "^2.1.1",
+    "redux": "^4.0.1"
   },
   "browserslist": [
     ">0.2%",
