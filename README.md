@@ -141,6 +141,12 @@ The result should look like this:
 
 ![Screenshot: Hello World](./docs/images/hello-world.png)
 
+If you get an error on Ubuntu, stating that there would not be enough disk space or the limit of inodes would be reached, run the following command in your terminal.
+
+```bash
+echo fs.inotify.max_user_watches=524288 | sudo tee -a /etc/sysctl.conf && sudo sysctl -p
+```
+
 Okay, so we're able to render something into our DOM. The result should be a nice paragraph with the text "Hello World!".
 
 ## 3.2 A header component
