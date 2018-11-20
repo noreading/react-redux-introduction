@@ -223,13 +223,13 @@ The template syntax of React has some quirks that we need to know, when we're wo
 
 The most used attributes and there replacements:
 
-| HTML Attribute | HTML Example       | JSX Example          |
-| :------------- | :----------------- | :------------------- |
-| class          | class="row"        | className="row"      |
-| for            | for="input-name"   | htmlFor="input-name" |
-| style          | style="color: red" | style={color: "red"} |
-| tabindex       | tabindex="1"       | tabIndex="1"         |
-| readonly       | readonly           | readOnly             |
+| HTML Attribute | HTML Example       | JSX Example            |
+| :------------- | :----------------- | :--------------------- |
+| class          | class="row"        | className="row"        |
+| for            | for="input-name"   | htmlFor="input-name"   |
+| style          | style="color: red" | style={{color: "red"}} |
+| tabindex       | tabindex="1"       | tabIndex="1"           |
+| readonly       | readonly           | readOnly               |
 
 __You should use Emmet:__
 
