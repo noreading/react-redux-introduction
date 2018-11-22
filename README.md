@@ -1556,7 +1556,7 @@ class ToDoItem extends React.Component {
           <div className="custom-control custom-checkbox">
             <input
               className="custom-control-input"
-              defaultValue={todo.uuid}
+              value={todo.uuid}
               id={`todo-done-${todo.uuid}`}
               type="checkbox"
               checked={todo.done}
@@ -1574,7 +1574,7 @@ class ToDoItem extends React.Component {
           <input
             type="text"
             className="form-control"
-            defaultValue={todo.text}
+            value={todo.text}
             onChange={e => {
               this.props.updateToDoText(todo.uuid, e.target.value);
             }}
@@ -2568,7 +2568,7 @@ class ToDoItem extends React.Component {
           <div className="custom-control custom-checkbox">
             <input
               className="custom-control-input"
-              defaultValue={todo.uuid}
+              value={todo.uuid}
               id={`todo-done-${todo.uuid}`}
               type="checkbox"
               checked={todo.done}
@@ -2588,7 +2588,7 @@ class ToDoItem extends React.Component {
           <input
             type="text"
             className="form-control"
-            defaultValue={todo.text}
+            value={todo.text}
             onChange={e => {
               this.props.updateToDoText(todo.uuid, e.target.value);
             }}
