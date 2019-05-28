@@ -1,12 +1,13 @@
 Introduction to React &amp; Redux Basics
 ===
 
-Following this tutorial you'll review:
+Following this tutorial you'll review those topics:
 
-- Setup of a React App using React Script  
-- Writing HTML with JSX  g
-- Adding SCSS for styles with React  
-- Using Font Awesome with React  
+- Setup a React App using React Script  
+- Writing HTML with JSX
+- Adding SCSS to React  
+- Using Font Awesome with React 
+- Creating React components   
 - Understanding the state  
 - Persisting data with localStorage
 - Routing with React Router    
