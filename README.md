@@ -4,7 +4,7 @@ Introduction to React &amp; Redux Basics
 Following this tutorial you'll review:
 
 - Setup of a React App using React Script  
-- Writing HTML with JSX  
+- Writing HTML with JSX  g
 - Adding SCSS for styles with React  
 - Using Font Awesome with React  
 - Understanding the state  
@@ -202,10 +202,10 @@ We should see the `h1` in the browser now.
 
 We don't want to put all our components into the `index.js` file, as this becomes quite messy over time. It would also be bad for the overall performance of our application.
 
-We create the new file `Header.jsx` in the `src/components` folder. The `.jsx` file extension tells our code editor that we're working with React files, so that we get the best possible support.
+We create the new file `Header.js` in the `src/components` folder. The `.js` file extension tells our code editor that we're working with React files, so that we get the best possible support.
 
 ```
-src/components/Header.jsx
+src/components/Header.js
 ```
 
 ```jsx
@@ -269,7 +269,7 @@ Add this to your settinngs:
 Let's say we want to add a subtitle to our `Header` component and we update our render method. As you will see, we use parenthesis around our template now, as this is needed for all multi-line templates that we want to use.
 
 ```
-/src/components/Header.jsx
+/src/components/Header.js
 ```
 
 ```jsx
@@ -290,7 +290,7 @@ export default Header;
 Your terminal or browser will immediately tell you that there's something wrong.
 
 ```bash
-Syntax error: /src/components/Header.jsx: Adjacent JSX elements must be wrapped in an enclosing tag (6:4)
+Syntax error: /src/components/Header.js: Adjacent JSX elements must be wrapped in an enclosing tag (6:4)
 
   4 |   return (
   5 |     <h1>What to do?</h1>
@@ -310,7 +310,7 @@ We can avoid to clutter up our markup with extra `DIV` elements by using a `Reac
 Update the code to the following and it will work.
 
 ```
-/src/components/Header.jsx
+/src/components/Header.js
 ```
 
 ```jsx
@@ -341,7 +341,7 @@ import React, { Fragment } from "react";
 Now we can use `Fragment` as element name.
 
 ```
-/src/components/Header.jsx
+/src/components/Header.js
 ```
 
 ```jsx
@@ -463,7 +463,7 @@ Most React applications use a `<App>` component as their entry point for handlin
 ## 6.2 Create the `ToDoList` component
 
 ```
-src/components/ToDoList.jsx
+src/components/ToDoList.js
 ```
 
 ```jsx
@@ -488,7 +488,7 @@ export default ToDoList;
 Now, as we have the components that we want to load on the page, let's create the App that includes them.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -531,7 +531,7 @@ render(<App />, document.querySelector("#main"));
 We need a small update to the `Header` component, so that the styles are all applied and there's a distance to the new `ToDoList` component. We will replace the `<Fragment>` with a `<header>` element.
 
 ```
-src/components/Header.jsx
+src/components/Header.js
 ```
 
 ```jsx
@@ -565,7 +565,7 @@ When we are using components in React, the framework passes JSX attributes to th
 Let's look at our `App` component and add a prop to the `Header` component, that we are using inside. The tagline below our `h1` element will be dynamic, when we are done.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -600,7 +600,7 @@ Whether you declare a component as a function or a class, it must never modify i
 Such functions are called “pure” because they do not attempt to change their inputs, and always return the same result for the same inputs.
 
 ```
-src/components/Header.jsx
+src/components/Header.js
 ```
 
 ```jsx
@@ -634,7 +634,7 @@ Let's rewrite our `Header` component and check how that works. The result is an 
 Be aware that you need to use `props` instead of `this.props` as props are passed as a parameter of the function now.
 
 ```
-src/components/Header.jsx
+src/components/Header.js
 ```
 
 ```jsx
@@ -662,7 +662,7 @@ Every application should have some routes for showing a 404 page and more. In ou
 Our `Help` component will be a template for a manual that helps users to use the application.
 
 ```
-src/components/Help.jsx`
+src/components/Help.js`
 ```
 
 ```jsx
@@ -697,7 +697,7 @@ Did you notice the new ```componentDidMount()``` method? This is one of a react 
 For all routes that don't exist we will show a simple 404 page, telling the user that we can't show him the desired result.
 
 ```
-src/components/NotFound.jsx
+src/components/NotFound.js
 ```
 
 ```jsx
@@ -732,7 +732,7 @@ export default NotFound;
 Now let's create the `Router` component that will load different parts of the application based on the URL that is used.
 
 ```
-src/component/Router.jsx
+src/component/Router.js
 ```
 
 ```jsx
@@ -829,7 +829,7 @@ We can use the new function to change our tagline on every pageload. Therefore w
 As we learned how to create stateless functional components before, let's also implement this for the `App` component to optimize performance.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -857,7 +857,7 @@ As a result you should see a different tagline evertime you reload the applicati
 Now that we know it works, let's remove this funny feature which could become a bit annoying, when you use the todo list every day. ;)
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -892,7 +892,7 @@ All React events are camelCase, rather than lowercase.
 Let's create a `ToDoForm` component that shows and handles the form we need to add new todo items to our list. The form will check if the input is empty and add the new item otherwise.
 
 ```
-src/components/ToDoForm.jsx
+src/components/ToDoForm.js
 ```
 
 ```jsx
@@ -924,7 +924,7 @@ export default ToDoForm;
 Next we'll add the form to our `App` component.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -957,7 +957,7 @@ The result should look like this:
 Now, that we've got the form in our application, we will ad an event handler to react on its submit. Remember that a form submit can be fired in 2 different ways. First by clicking on a submit button (in our case "Add item") and second by pressing [Enter] in any input field (in our case the item text).
 
 ```
-src/components/ToDoForm.jsx
+src/components/ToDoForm.js
 ```
 
 ```jsx
@@ -1009,7 +1009,7 @@ An important thing to note is that we need to change the binding of `this` for o
 Let's add the reference in our `ToDoForm` component.
 
 ```
-src/components/ToDoForm.jsx
+src/components/ToDoForm.js
 ```
 
 ```jsx
@@ -1067,7 +1067,7 @@ When you open the Chrome dev console, insert a text in the input field and press
 Great! But let's improve our code style a bit and use an alternative to the oldschool binding that we have right now. As we're using the `react scripts` module, which has babel inside, we are able to use an easier ES6 syntax without modifying the constructor.
 
 ```
-src/components/ToDoForm.jsx
+src/components/ToDoForm.js
 ```
 
 ```jsx
@@ -1104,7 +1104,7 @@ Let's create the state with our list of todo items. We use an object for the tod
 The official way to set the initial state of a component is to use a `constructor` method, that gets the props as argument and calls the parent constructor by using `super`.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -1153,7 +1153,7 @@ npm install --save-dev uuid
 Now we can use that in our component.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -1210,7 +1210,7 @@ What are we doing there?
 The next thing we have to do is to update our `ToDoForm` component, so that it uses the mutation from its parent. Let's upgrade the `handleSubmit()` function.
 
 ```
-src/components/ToDoForm.jsx
+src/components/ToDoForm.js
 ```
 
 ```jsx
@@ -1240,7 +1240,7 @@ Now that we will store some data in our state, let's display the list of items o
 We will create a `ToDoItem` component, that we will use in our already existing `ToDoList` component then. But let's pass the data from our `App` component to the `ToDoList` component first.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -1258,7 +1258,7 @@ src/components/App.jsx
 Now we create the `ToDoItem` component that is very basic for now and will be extended in the next few steps. Let's keep it simple to see if the data is there.
 
 ```
-src/components/ToDoItem.jsx
+src/components/ToDoItem.js
 ```
 
 ```jsx
@@ -1282,7 +1282,7 @@ To loop over our object of items we will use a combination of Object.keys() and 
 With Object.keys() we get all the property names of our object, which are equal and with Array.map() we create a new array of JSX templates that get rendered into our `ToDoItem` component.
 
 ```
-src/components/ToDoList.jsx
+src/components/ToDoList.js
 ```
 
 ```jsx
@@ -1425,7 +1425,7 @@ body {
 We add methods to update the state and pass them as props to the `ToDoList` component.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -1512,7 +1512,7 @@ As you can see we added 3 new methods.
 We take the mutations that we passed from the `ToDoWidget` and pass them to the `ToDoItem`, where they will be used for different events. We will also change from a `ul` to a `table`, to achive the layout we want to have.
 
 ```
-src/components/ToDoList.jsx
+src/components/ToDoList.js
 ```
 
 ```jsx
@@ -1551,7 +1551,7 @@ Now let's use the mutations to lift up the state changes that each item can trig
 We will also add a method to handle every `keyup` event of the text input field, to check if the `keyCode` matches the \[Enter\] key. If the \[Enter\] key is pressed, the `blur()` method of the input elemenent is called, to remove the focus.
 
 ```
-src/components/ToDoItem.jsx
+src/components/ToDoItem.js
 ```
 
 ```jsx
@@ -1680,7 +1680,7 @@ We will load our new `Storage` class and get the stored data in our constructor,
 Everytime that the state gets changed, we will update the data stored in localStorage, using the `componentDidUpdate()` lifecycle method.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -1784,7 +1784,7 @@ Our `ToDoFilter` component will include the user interface to set the filter for
 The JSX below generates a list of 3 buttons in a Bootstrap button group. We use an array to store our filters, so that we're flexible to extend our solution later and that we don't have to repeat the same code 3 times.
 
 ```
-src/components/ToDoFilter.jsx
+src/components/ToDoFilter.js
 ```
 
 ```jsx
@@ -1829,7 +1829,7 @@ export default ToDoFilter;
 As a next step we need to update our `App` with a state property for the set filter and a function to mutate the new property. We will also load the new `ToDoFilter` component in the `render()` method.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
@@ -1938,7 +1938,7 @@ Great. We now have our filter stored in the state of the `App` and we pass it to
 The next step is to convert our `ToDoList` component to a stateful one and to filter all todo items, that are passed as props, depending on the active filter. We use a new method `filteredItems()` in our class during rendering. As the `App` component passes the "filter" prop from the state, every click on a filter button will update the props of the `ToDoList` component and trigger a new rendering, so also a filtering.
 
 ```
-src/components/ToDoList.jsx
+src/components/ToDoList.js
 ```
 
 ```jsx
@@ -2359,7 +2359,7 @@ The first argument is a function that defines which properties of the state shou
 The second argument is an object to pass actions as props to the component. In our case this is the _setFilter_ action, that we defined in the `src/actions/index.js` file.
 
 ```
-src/components/ToDoFilter.jsx
+src/components/ToDoFilter.js
 ```
 
 ```jsx
@@ -2433,7 +2433,7 @@ __Hint:__
 When we don't need state data, we have to be aware of the ES6 implicit return syntax and use a pair of parentheses around the empty object.
 
 ```
-src/components/ToDoForm.jsx
+src/components/ToDoForm.js
 ```
 
 ```jsx
@@ -2495,7 +2495,7 @@ The new todo item should be visible, like in the following example:
 The next component to upgrade is the `ToDoList`, which needs the todo items and the filter from the store, but no actions.
 
 ```
-src/components/ToDoList.jsx
+src/components/ToDoList.js
 ```
 
 ```jsx
@@ -2561,7 +2561,7 @@ So let's go to the next step.
 The next component to upgrade is the `ToDoItem`, which does not neet data from the state, but the actions to check, edit and remove an item.
 
 ```
-src/components/ToDoItem.jsx
+src/components/ToDoItem.js
 ```
 
 ```jsx
@@ -2658,7 +2658,7 @@ The changes should be visible like in the following example:
 The last component to upgrade is the `App`, which does not need the Redux store, but will become a lot smaller now.
 
 ```
-src/components/App.jsx
+src/components/App.js
 ```
 
 ```jsx
