@@ -1,6 +1,19 @@
 Introduction to React &amp; Redux Basics
 ===
 
+Following this tutorial you'll review:
+
+- Setup of a React App using React Script  
+- Writing HTML with JSX  
+- Adding SCSS for styles with React  
+- Using Font Awesome with React  
+- Understanding the state  
+- Persisting data with localStorage
+- Routing with React Router    
+- Implementing Redux  
+- Usage of Redux Dev Tools
+
+
 # 1. Real World Showcase
 
 Let's see how React is used in the final to-do application and how the component based approach fits to the real world. We will have a look at nested components and how they share a state to store application data.
@@ -382,7 +395,7 @@ export default Header;
 
 # 5. Adding SCSS for styles
 
-As we're going to use the Bootstrap framework in our demo application, it's a good idea to extend our setup with a SASS/SCSS loader. We will use the package `node-sass-chokidar` instead of `node-sass`, as it fixes some known bugs.
+As we're going to use the Bootstrap framework in our demo application, it's a good idea to extend our setup with a SASS/SCSS loader. We will use the package `node-sass`.
 
 ## 5.1 Install additional package
 
