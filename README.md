@@ -5,7 +5,7 @@ Introduction to React &amp; Redux Basics
 
 Let's see how React is used in the final to-do application and how the component based approach fits to the real world. We will have a look at nested components and how they share a state to store application data.
 
-Please open the demo of our [What to do?](https://todo-redux.node-friends.com/) app in your browser.
+Please open the demo of our [What to do?](https://fbw-12.github.io/react-redux-introduction/) app in your browser.
 
 Use the [React Developer Tools](https://chrome.google.com/webstore/detail/react-developer-tools/fmkadmapgofadopljbjfkapdkoienihi) for Google Chrome to check the state of the __App__ component and fiddle around with the data to see how changes take effect.
 
@@ -50,12 +50,17 @@ package.json
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "react": "^16.6.3",
-    "react-dom": "^16.6.3",
-    "react-redux": "^5.1.1",
-    "react-router-dom": "^4.3.1",
-    "react-scripts": "^2.1.1",
-    "redux": "^4.0.1"
+    "@fortawesome/fontawesome-free": "^5.8.2",
+    "bootstrap": "^4.3.1",
+    "gh-pages": "^2.0.1",
+    "node-sass": "^4.12.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6",
+    "react-redux": "^7.0.3",
+    "react-router-dom": "^5.0.0",
+    "react-scripts": "^3.0.1",
+    "redux": "^4.0.1",
+    "uuid": "^3.3.2"
   },
   "browserslist": [
     ">0.2%",

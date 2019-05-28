@@ -2,21 +2,18 @@
   "name": "react-todo",
   "version": "1.0.0",
   "description": "A todo application using the basics of React and Redux",
+  "homepage": "https://fbw-12.github.io/react-redux-introduction/",
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "yarn run build",
+    "deploy": "gh-pages -d build"
   },
-  "devDependencies": {},
-  "browserslist": [
-    ">0.2%",
-    "not dead",
-    "not ie <= 11",
-    "not op_mini all"
-  ],
-  "dependencies": {
+  "devDependencies": {
     "@fortawesome/fontawesome-free": "^5.8.2",
     "bootstrap": "^4.3.1",
+    "gh-pages": "^2.0.1",
     "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
@@ -25,5 +22,11 @@
     "react-scripts": "^3.0.1",
     "redux": "^4.0.1",
     "uuid": "^3.3.2"
-  }
+  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not ie <= 11",
+    "not op_mini all"
+  ]
 }
