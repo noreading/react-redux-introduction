@@ -1,4 +1,4 @@
-Introduction to React &amp; Redux Basics
+React &amp; Redux To-do List
 ===
 
 Following this tutorial you'll review those topics:
@@ -13,6 +13,8 @@ Following this tutorial you'll review those topics:
 - Routing with React Router    
 - Implementing Redux  
 - Usage of Redux Dev Tools
+
+Check the live [Demo](https://fbw-12.github.io/react-redux-introduction/)
 
 
 # 1. Real World Showcase
@@ -64,17 +66,10 @@ package.json
     "eject": "react-scripts eject"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.8.2",
-    "bootstrap": "^4.3.1",
-    "gh-pages": "^2.0.1",
-    "node-sass": "^4.12.0",
     "react": "^16.8.6",
     "react-dom": "^16.8.6",
-    "react-redux": "^7.0.3",
     "react-router-dom": "^5.0.0",
-    "react-scripts": "^3.0.1",
-    "redux": "^4.0.1",
-    "uuid": "^3.3.2"
+    "react-scripts": "^3.0.1"
   },
   "browserslist": [
     ">0.2%",
