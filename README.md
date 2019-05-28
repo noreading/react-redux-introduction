@@ -403,7 +403,7 @@ As we're going to use the Bootstrap framework in our demo application, it's a go
 We need some additional packages, that we install by running the following command. Bootstrap is used to create the basic laout of our application in the next steps.
 
 ```bash
-npm install --save-dev node-sass-chokidar bootstrap
+npm install --save-dev node-sass bootstrap
 ```
 
 ## 5.2 Create the stylesheet file
