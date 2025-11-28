@@ -1,3 +1,6 @@
+> [!WARNING]  
+> This repository is archived and not maintained anymore!
+
 Introduction to React &amp; Redux Basics
 ===
 
